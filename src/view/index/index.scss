@@ -1,7 +1,61 @@
 @import "base/base";
 
 .view-index {
-    h2 {
-        font-size: rem(64);
+    width: 100%;
+    height: 100vh;
+    // background: resolve("./bg/bg1.jpeg") center no-repeat;
+    background-size: cover;
+    overflow: hidden;
+
+    .tag-bar {
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        height: rem(70);
+        line-height: rem(70);
+        font-size: rem(28);
+        color: #fff;
+
+        .change-item {
+            display: inline-block;
+            width: 25%;
+            height: 100%;
+            border-left: 1px solid #fff;
+            background-color: #333;
+            text-align: center;
+
+            &:first-child {
+                border-left: 0;
+            }
+        }
+    }
+
+    .img-con {
+        width: rem(600);
+        margin: rem(100) auto 0;
+
+        img {
+            width: 100%;
+        }
+    }
+
+    .txt {
+        width: rem(580);
+        margin: rem(50) auto;
+        font-size: rem(28);
+
+        .placeholder {
+            font-size: rem(28);
+            color: #fff;
+        }
+
+        .input-con {
+            width: 100%;
+            height: rem(64);
+            padding-left: rem(20);
+            line-height: rem(64);
+            font-size: rem(28);
+        }
     }
 }

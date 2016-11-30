@@ -6,7 +6,7 @@
 */
 
 export default function (app, done = () => { }) {
-    app.route('/', require('../view/index'))
+    app.route('/', require('view/index'))
         .route('/guide', require('../view/guide'))
 
     done()

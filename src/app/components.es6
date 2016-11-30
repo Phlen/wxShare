@@ -7,4 +7,4 @@
 // import 'tag/hello'
 
 // formatters
-// import 'formatters/bg'
+import 'formatters/bg'

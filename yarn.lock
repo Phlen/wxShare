@@ -2465,6 +2465,10 @@ html-tags@^1.1.1:
   version "1.1.1"
   resolved "http://registry.npm.taobao.org/html-tags/download/html-tags-1.1.1.tgz#869f43859f12d9bdc3892419e494a628aa1b204e"
 
+html2canvas:
+  version "0.5.0-beta4"
+  resolved "http://registry.npm.taobao.org/html2canvas/download/html2canvas-0.5.0-beta4.tgz#8282c62ac5fd78168f5702b5e4877157ca93f39e"
+
 htmlparser2@^3.8.2, htmlparser2@^3.9.1:
   version "3.9.2"
   resolved "http://registry.npm.taobao.org/htmlparser2/download/htmlparser2-3.9.2.tgz#1bdf87acca0f3f9e53fa4fcceb0f4b4cbb00b338"
