@@ -3,10 +3,13 @@
 */
 import $ from 'jquery'
 import html2canvas from 'html2canvas'
-import canvas2images from 'vendor/canvas2images.js'
+// import canvas2images from 'file-saver'
+// import canvas2images from 'vendor/canvas2images.js'
 
-console.log(canvas2images)
+import Draggabilly from 'draggabilly'
 
+import toBlob from 'vendor/canvas2blob'
+console.log(toBlob)
 import View from 'view/base'
 import './index.scss'
 
@@ -25,6 +28,7 @@ export default class Index extends View {
             showInput: false,
             bg: this.changeBgItem[1]
         }).then(() => {
+            this.initUi()
         })
     }
 
@@ -54,19 +58,51 @@ export default class Index extends View {
     }
 
     inputOnBlur (e, el) {
-        console.log(e)
         this.scope.showInput = false
         this.scope.txt = $(el).val()
         $('.placeholder').text(this.scope.txt)
+    }
+
+    dragEvent (e, el) {
+        console.log(el)
+    }
+
+    initUi () {
+        let drag = new Draggabilly('.img-con', {
+            containment: '.view-index'
+        })
     }
 
     save () {
         console.log('save')
         html2canvas(document.body, {
             onrendered: canvas => {
-                let data = canvas2images.saveAsJPEG(canvas)
+                let data = canvas.toDataURL()
                 console.log(data)
+                this.scope.screenshotsImg = data
+                this.scope.screenshots = true
+                // console.log(canvas.toBlob)
+                // console.log(canvas2images.saveAs)
+                // canvas.toBlob(blob => {
+                //     canvas2images.saveAs(blob, 'pretty image.png')
+                // })
+                // canvas2images.saveAsPNG(canvas)
+                // var image = canvas.toDataURL('image/png').replace('image/png', 'image/octet-stream')
+                // window.location.href = image
             }
         })
     }
+
+    // download (url) {
+    //     console.log('download...')
+    //     let xhr = new XMLHttpRequest()
+    //     console.log(xhr)
+    //     xhr.open('GET', url, true)
+    //     xhr.responseType = 'blob'
+    //     xhr.onreadystatechange = () => {
+    //         if (xhr.readyState === 4) {
+
+    //         }
+    //     }
+    // }
 }
